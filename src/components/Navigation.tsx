@@ -16,14 +16,14 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center gap-3">
             <div className="relative w-[85.8px] h-[21.45px]">
-              <div className="absolute top-0 left-0 w-[18.84px] h-[21.12px] bg-primary"></div>
-              <div className="absolute top-[0.33px] left-[19.37px] w-[18.95px] h-[20.46px] bg-primary"></div>
-              <div className="absolute top-[0.33px] left-[39.77px] w-[15.71px] h-[20.46px] bg-primary"></div>
-              <div className="absolute top-[0.33px] left-[58.11px] w-[3.73px] h-[20.46px] bg-primary"></div>
-              <div className="absolute top-0 right-0 w-[21.45px] h-[21.45px] rounded-full border-[3.86px] border-secondary">
-                <div className="absolute top-[2.3px] right-[3.17px] w-[3.31px] h-[3.31px] bg-secondary transform rotate-[-30deg]"></div>
+              <div className="absolute top-0 left-0 w-[18.84px] h-[21.12px]" style={{backgroundColor: 'var(--color-primary)'}}></div>
+              <div className="absolute top-[0.33px] left-[19.37px] w-[18.95px] h-[20.46px]" style={{backgroundColor: 'var(--color-primary)'}}></div>
+              <div className="absolute top-[0.33px] left-[39.77px] w-[15.71px] h-[20.46px]" style={{backgroundColor: 'var(--color-primary)'}}></div>
+              <div className="absolute top-[0.33px] left-[58.11px] w-[3.73px] h-[20.46px]" style={{backgroundColor: 'var(--color-primary)'}}></div>
+              <div className="absolute top-0 right-0 w-[21.45px] h-[21.45px] rounded-full border-[3.86px]" style={{borderColor: 'var(--color-secondary)'}}>
+                <div className="absolute top-[2.3px] right-[3.17px] w-[3.31px] h-[3.31px] transform rotate-[-30deg]" style={{backgroundColor: 'var(--color-secondary)'}}></div>
               </div>
-              <div className="absolute top-[7.29px] left-[71.97px] w-[6.9px] h-[6.9px] border-[1.34px] border-secondary"></div>
+              <div className="absolute top-[7.29px] left-[71.97px] w-[6.9px] h-[6.9px] border-[1.34px]" style={{borderColor: 'var(--color-secondary)'}}></div>
             </div>
           </div>
 
@@ -33,7 +33,10 @@ const Navigation = () => {
               <Link
                 key={item.label}
                 href={item.href}
-                className="text-sm font-semibold text-[#0F0F1C] hover:text-primary transition-colors duration-200 leading-[90%] tracking-[-0.02em]"
+                className="text-sm font-semibold leading-[90%] tracking-[-0.02em] transition-colors duration-200" 
+                style={{color: '#0F0F1C'}}
+                onMouseOver={(e) => e.currentTarget.style.color = 'var(--color-primary)'} 
+                onMouseOut={(e) => e.currentTarget.style.color = '#0F0F1C'}
               >
                 {item.label}
               </Link>
@@ -41,8 +44,8 @@ const Navigation = () => {
           </div>
 
           {/* Avatar */}
-          <div className="w-11 h-11 rounded-full border-3 border-[#D1DBF6] bg-gray-200 overflow-hidden">
-            <div className="w-full h-full bg-gradient-to-br from-primary to-secondary opacity-20"></div>
+          <div className="w-11 h-11 rounded-full border-3 bg-gray-200 overflow-hidden" style={{borderColor: '#D1DBF6'}}>
+            <div className="w-full h-full opacity-20" style={{background: 'linear-gradient(to bottom right, var(--color-primary), var(--color-secondary))'}}></div>
           </div>
         </div>
       </div>
